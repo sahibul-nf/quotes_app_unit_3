@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../pages/quote_detail_page.dart';
-import '../pages/search_page.dart';
 import '../themes/typography.dart';
 import '../widgets/icon_solid_light.dart';
 import '../widgets/quotes_card.dart';
+import 'search_page.dart';
 
 class QuotesPage extends StatelessWidget {
   const QuotesPage({super.key});
