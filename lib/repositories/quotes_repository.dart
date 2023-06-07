@@ -36,4 +36,32 @@ class QuotesRepository {
 
     return quotes;
   }
+
+  Future<List<QuoteApi>> searchQuotes(String query) async {
+    String url = "https://api.quotable.io/search/quotes/?query=$query";
+
+    // send request to api
+    final response = await http.get(Uri.parse(url));
+
+    // jika gagal
+    if (response.statusCode != 200) {
+      throw Exception("Error get random quotes");
+    }
+
+    // jika berhasil
+    print(response.body);
+
+    // decode json
+    final jsonData = jsonDecode(response.body);
+    final data = jsonData['results'] as List;
+
+    List<QuoteApi> quotes = [];
+
+    for (var i in data) {
+      final quote = QuoteApi.fromJson(i);
+      quotes.add(quote);
+    }
+
+    return quotes;
+  }
 }

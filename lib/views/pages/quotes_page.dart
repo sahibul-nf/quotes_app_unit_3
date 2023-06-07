@@ -31,7 +31,7 @@ class QuotesPage extends ConsumerWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const SearchPage(),
+                        builder: (context) => SearchPage(),
                       ),
                     );
                   },
